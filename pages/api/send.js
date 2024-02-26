@@ -1,8 +1,9 @@
 import { Resend } from 'resend'
-import { getStoryblokApi } from '@storyblok/react'
 import { Page } from '../../components/Page'
+import { loadStoryblok } from '../../utility/loadStoryblok'
 const resend = new Resend(process.env.RESEND_API_KEY)
-
+import { getStoryblokApi } from '@storyblok/react'
+loadStoryblok()
 export default async (req, res) => {
   const body = req.body
   if (
