@@ -1,8 +1,7 @@
 import React from 'react'
 
-const Hero = () => {
-  return (
-    export default function Example() {
+const Hero = ({blok}) => {
+ 
         return (
           <div className="relative bg-white">
             <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
@@ -10,7 +9,7 @@ const Hero = () => {
                 <div className="mx-auto max-w-2xl lg:mx-0">
                   <img
                     className="h-11"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src={blok.logo.filename}
                     alt="Your Company"
                   />
                   <div className="hidden sm:mt-32 sm:flex lg:mt-16">
@@ -23,11 +22,10 @@ const Hero = () => {
                     </div>
                   </div>
                   <h1 className="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">
-                    Data to enrich your online business
+                    {blok.Header}
                   </h1>
                   <p className="mt-6 text-lg leading-8 text-gray-600">
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                    fugiat veniam occaecat fugiat aliqua.
+                  {blok.Subtext}
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
@@ -45,14 +43,13 @@ const Hero = () => {
               <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
                 <img
                   className="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
-                  src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
+                  src={blok.heroimage?.filename}
                   alt=""
                 />
               </div>
             </div>
           </div>
-        )
-      }
+      
       
   )
 }
