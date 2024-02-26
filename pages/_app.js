@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/tailwind.css'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
 import Feature from '../components/Feature'
 import { Page } from '../components/Page'
