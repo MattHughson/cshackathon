@@ -36,14 +36,14 @@ const days = [
   { date: '2022-01-21', isCurrentMonth: true, isSelected: true },
   { date: '2022-01-22', isCurrentMonth: true ,isAvailible: true},
   { date: '2022-01-23', isCurrentMonth: true ,isAvailible: true},
-  { date: '2022-01-24', isCurrentMonth: true },
-  { date: '2022-01-25', isCurrentMonth: true },
+  { date: '2022-01-24', isCurrentMonth: true, inquicker: true },
+  { date: '2022-01-25', isCurrentMonth: true , inquicker: 4},
   { date: '2022-01-26', isCurrentMonth: true ,isAvailible: true},
   { date: '2022-01-27', isCurrentMonth: true },
-  { date: '2022-01-28', isCurrentMonth: true },
-  { date: '2022-01-29', isCurrentMonth: true },
+  { date: '2022-01-28', isCurrentMonth: true , inquicker: 1},
+  { date: '2022-01-29', isCurrentMonth: true , inquicker: 2},
   { date: '2022-01-30', isCurrentMonth: true },
-  { date: '2022-01-31', isCurrentMonth: true },
+  { date: '2022-01-31', isCurrentMonth: true , inquicker: 3},
   { date: '2022-02-01' },
   { date: '2022-02-02' },
   { date: '2022-02-03' },
@@ -70,16 +70,16 @@ function classNames(...classes) {
 }
 
 const Cal = ({blok}) => {
-
+console.log(blok.inquicker, 'blokcheck')
   return (
     <div className='flex flex-col'{...storyblokEditable(blok)}>
 
 {blok?.body?.map((nestedBlok) => (
-      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} days={days} classNames={classNames} meetings={meetings}/>
+      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} quicker={blok.inquicker} days={days} classNames={classNames} meetings={meetings}/>
     ))}
     
 
-    </div>
+    </div>  
   )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Fragment } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
@@ -6,6 +6,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline'
 
 const Schedule = ({blok, meetings}) => {
+
   return (
     <section className="mt-12">
     <h2 className="text-base font-semibold leading-6 text-gray-900">

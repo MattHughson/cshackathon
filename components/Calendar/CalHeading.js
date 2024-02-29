@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Fragment } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { Menu, Transition } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline'
 
-const CalHeading = ({blok, days, classNames}) => {
-    console.log("heading blok",blok)
+const CalHeading = ({blok, days, classNames, quicker}) => {
+
+ 
     const {Showavailible} = blok
+    
   return (
    <div>
      <div className="flex items-center">
@@ -48,7 +50,7 @@ const CalHeading = ({blok, days, classNames}) => {
                 !day.isSelected && !day.isToday && !day.isCurrentMonth && 'text-gray-400',
                 day.isSelected && day.isToday && 'bg-indigo-600',
                 day.isAvailible && Showavailible &&'bg-green-600',
-                
+                day.inquicker === quicker.length &&'bg-green-600',
                 day.isSelected && !day.isToday && 'bg-gray-900',
                 !day.isSelected && 'hover:bg-gray-200',
                 (day.isSelected || day.isToday) && 'font-semibold',
